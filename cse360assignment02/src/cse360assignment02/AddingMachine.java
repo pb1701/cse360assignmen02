@@ -24,8 +24,15 @@ public class AddingMachine {
 	 * Declares public class AddingMachine
 	 * which holds the private integer
 	 * called total
+	 * 
+	 * I have now included a private string
+	 * called HISTORY which starts with 0 and 
+	 * then has each number needed added or 
+	 * subtracted as it goes on to give us the final
+	 * string result we need
 	 */
   private int total;
+  private String HISTORY = "0";
   
   public AddingMachine () {
     /**
@@ -42,9 +49,10 @@ public class AddingMachine {
 	   * and would hold the code to gather the 
 	   * total number from AddingMachine
 	   * 
-	   * @return int this returns 0 so far 
+	   * @return int this returns the total of
+	   * the calculation
 	   */
-    return 0;
+    return total;
   }
   
   public void add (int value) {
@@ -53,7 +61,19 @@ public class AddingMachine {
 	   * it access to int value. This will be 
 	   * the area used to put code in order to 
 	   * add any numbers together. 
+	   * 
+	   * I have total as += which means to add the value
+	   * in this case being +4 and then +5 at the end 
+	   * which is in the Main.java file
+	   * 
+	   * I also added HISTORY which is += and this is to add
+	   * the the value and whatever was done to it to the 
+	   * string. In this case + 4 and then + 5 at the end 
+	   * after subtracting 2.
 	   */
+	  
+	   total+=value;
+       HISTORY+=" + "+value;
   }
 
   public void subtract (int value) {
@@ -62,7 +82,18 @@ public class AddingMachine {
 	   * it access to int value. This will be 
 	   * the area used to put code in order to 
 	   * subtract any numbers. 
+	   * 
+	   * I have total as -= which means to subtract the value
+	   * in this case being 2 which is in the Main.java 
+	   * file
+	   * 
+	   * I also added HISTORY which is += and this is to add
+	   * the the value and whatever was done to it to the 
+	   * string. In this case - 2
 	   */
+	  
+	   total-=value;
+       HISTORY+=" - "+value;
   }
 
   public String toString () {
@@ -71,17 +102,18 @@ public class AddingMachine {
 	   * This will be used later to return any
 	   * history
 	   * 
-	   * @return string this is used to return 
-	   * the final string that is in between the 
-	   * ""
+	   * @return string HISTORY+ this is used to return 
+	   * the final string HISTORY+ that is in between the 
+	   * "". Which should give us 0 + 4 - 2 + 5
+	   * 
 	   */
-    return "";
+    return HISTORY+ "";
   }
 
   public void clear() {
 	  /**
 	   * Declares public void clear and is simply 
 	   * used to clear our memory when needed.
-	   */
+	   */  
   }
 }
